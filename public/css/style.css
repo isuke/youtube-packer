@@ -1,0 +1,49 @@
+body {
+  background-color: #F7F7FF;
+  color: #434343;
+
+  text-align: center;
+}
+
+h1 {
+  font-size: 22pt;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 12px;
+}
+
+a {
+  color: #1C1C1C;
+}
+
+#header {
+  margin-top: 80px;
+}
+
+#main {
+  margin-top: 80px;
+}
+
+#footer {
+  margin-top: 500px;
+  text-align: center;
+}
+
+#footer p {
+  color: #BDc0BA;
+}
+
+.en {
+
+}
+
+.ja {
+  font-size: 80%
+}

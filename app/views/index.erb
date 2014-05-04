@@ -2,19 +2,21 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel=stylesheet type="text/css" href="css/style.css">
     <title>Youtube Packer</title>
   </head>
   <body>
     <div id="header">
       <h1>Youtube Packer</h1>
-      <h2>Extract Youtube movies, And pack these to playlist.<h2>
+      <h2 class="en">Extract Youtube movies from URL, And pack these to a playlist.<h2>
+      <h2 class="ja">Youtubeの動画をURLから抽出して、プレイリストを作成します。<h2>
     </div>
     <div id="main">
       <form action="/main" method="POST">
         <div class="en"><p>Enter URL that you want to make playlist.</p></div>
         <div class="jp"><p>プレイリストにしたい動画が埋め込まれたサイトのURLを入力してください。</p></div>
         <p><input type="url" size="80" name="url" placeholder="http://..." required autofocus></p>
-        <p><input type="submit" value="Make Playlst!"></p>
+        <p><input type="submit" value="Make Playlist!"></p>
       </form>
     </div>
   </body>
