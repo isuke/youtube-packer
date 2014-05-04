@@ -1,0 +1,8 @@
+listen 3000
+timeout 180
+worker_processes 1
+working_directory "/var/lib/youtube-packer/"
+
+pid "/var/run/youtube-packer"
+stdout_path "/var/log/youtube-packer.log"
+stderr_path "/var/log/youtube-packer.err"
