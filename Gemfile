@@ -10,3 +10,7 @@ group :development, :test do
   gem 'rack-test'
   gem 'webmock'
 end
+
+group :production do
+  gem 'unicorn', '~> 4.8.2'
+end
