@@ -3,6 +3,45 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel=stylesheet type="text/css" href="css/style.css">
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load( 'swfobject', '2.2' );
+    </script>
+    <script type="text/javascript">
+      var PLAYER_ID = 'videoDiv';
+      var VIDEO_ID = '<%= @youtube_ids.delete_at(0) %>';
+      var list = '<%= @youtube_ids.join(',') %>';
+
+      var swfUrl = 'http://www.youtube.com/v/' + VIDEO_ID
+                 + '?enablejsapi=1'
+                 + '&listType=playlist'
+                 + '&playlist=' + list
+                 + '&autoplay=1'
+                 + '&loop=1'
+                 + '&color=white'
+                 + '&theme=light';
+
+      var replaceElemId = PLAYER_ID;
+      var width = '480';
+      var height = '295';
+      var swfVersion = '8';
+
+      var params = { allowScriptAccess: 'always' };    // 外部のドメインからのアクセスを許可
+      var atts = { id: replaceElemId };                // 埋め込みプレーヤーのID
+
+      // YouTubeプレーヤーの埋め込み
+      swfobject.embedSWF(
+          swfUrl,
+          replaceElemId,
+          width,
+          height,
+          swfVersion,
+          null,
+          null,
+          params,
+          atts
+          );
+    </script>
     <title>Youtube Packer</title>
   </head>
   <body>
@@ -12,6 +51,7 @@
     <div id="main">
       <h2><%=@title%></h2>
       <p><%=@url%></p>
+      <div id="videoDiv"></div>
     </div>
     <div id="footer">
       <p>Thank you for using.</p>

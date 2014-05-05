@@ -18,6 +18,7 @@ class YPer < Sinatra::Base
     @url = params[:url]
     doc = Nokogiri::HTML(open(@url))
     @title = doc.title
+    @youtube_ids = ['pfDwMbtBgfU','GdKJgLIompg', 'mEerSoIqRTM']
     erb :main
   end
 end
