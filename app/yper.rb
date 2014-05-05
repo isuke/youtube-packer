@@ -3,8 +3,12 @@ require 'sinatra/reloader'
 require 'nokogiri'
 require 'open-uri'
 
+require_relative 'helpers'
+
 class YPer < Sinatra::Base
   set :public_folder, File.expand_path(File.join(root, '..', 'public'))
+
+  helpers Sinatra::YPer::Helpers
 
   configure :development do
     register Sinatra::Reloader
@@ -22,18 +26,4 @@ class YPer < Sinatra::Base
     erb :main
   end
 
-  def youtube_ids(doc)
-    result = []
-    doc.css('object > param').each do |d|
-      d['value'].scan(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/) do |id|
-        result << id[6] unless result.include?(id[6])
-      end
-    end
-    doc.css('iframe').each do |d|
-      d['src'].scan(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/) do |id|
-        result << id[6] unless result.include?(id[6])
-      end
-    end
-    result
-  end
 end
