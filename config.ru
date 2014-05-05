@@ -1,3 +1,3 @@
-require './app/app.rb'
+require './app/yper.rb'
 
-run App.new
+run YPer.new

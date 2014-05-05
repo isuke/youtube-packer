@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'The Youtube Packer' do
 
   def app
-    App
+    YPer
   end
 
   context "when get '/'" do
