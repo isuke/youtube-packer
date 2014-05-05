@@ -11,4 +11,8 @@ class YPer < Sinatra::Base
   get '/' do
     erb :index
   end
+
+  post '/main' do
+    erb :main
+  end
 end
