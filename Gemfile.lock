@@ -6,7 +6,10 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
+    mini_portile (0.5.3)
     multi_json (1.9.3)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -41,6 +44,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  nokogiri (~> 1.6.1)
   rack-test
   rspec (~> 2.14)
   sinatra (~> 1.4)
