@@ -55,8 +55,7 @@ describe 'The Youtube Packer' do
 
     it "show main" do
       expect(last_response).to be_ok
-      expect(last_response.body).to include('<h2>Example title</h2>')
-      expect(last_response.body).to include('<p>http://www.example.com</p>')
+      expect(last_response.body).to include('<h2><a href=http://www.example.com>Example title</a></h2>')
     end
 
     it "get youtube ids" do
