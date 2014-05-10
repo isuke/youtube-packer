@@ -33,11 +33,9 @@ describe 'The Youtube Packer' do
                        '<embed type="application/x-shockwave-flash" width="425" height="350" src="[YOUTUBE_URL]"></embed>' +
                      '</object>']
       urls = ['http://www.youtube.com/watch?v=[YOUTUBE_ID]&feature=feedrec_grec_index',
-              'http://www.youtube.com/user/IngridMichaelsonVEVO#p/a/u/1/[YOUTUBE_ID]',
               'http://www.youtube.com/v/[YOUTUBE_ID]?fs=1&amp;hl=en_US&amp;rel=0',
               'http://www.youtube.com/watch?v=[YOUTUBE_ID]#t=0m10s',
               'http://www.youtube.com/embed/[YOUTUBE_ID]?rel=0',
-              'http://www.youtube.com/watch?v=[YOUTUBE_ID]',
               'http://youtu.be/[YOUTUBE_ID]',
               '//www.youtube.com/embed/[YOUTUBE_ID]']
 
@@ -68,16 +66,12 @@ describe 'The Youtube Packer' do
                                                         "id000000003," +
                                                         "id000000004," +
                                                         "id000000005," +
-                                                        "id000000006," +
-                                                        "id000000007," +
                                                         "id000100000," +
                                                         "id000100001," +
                                                         "id000100002," +
                                                         "id000100003," +
                                                         "id000100004," +
-                                                        "id000100005," +
-                                                        "id000100006," +
-                                                        "id000100007")
+                                                        "id000100005")
     end
   end
 end

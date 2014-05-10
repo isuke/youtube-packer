@@ -2,25 +2,17 @@ module Sinatra
   module YPer
     module Helpers
 
+      YOUTUBE_REG = /((www\.youtube\.com)|(youtu\.be))\/((watch\?v=)|(v\/)|(embed\/)?)([A-Za-z0-9_-]{11})/
+
       def youtube_ids(doc)
         result = []
-        [{css: 'iframe'        , attr: 'src'},
-         {css: 'object > param', attr: 'value'}].each do |hash|
-          youtube_ids0(doc, hash[:css], hash[:attr]) do |id|
-            result << id unless result.include?(id)
+        ['iframe[src]', 'object > embed[src]'].each do |css|
+          doc.css(css).each do |d|
+            tmp = YOUTUBE_REG.match(d['src'])
+            result << tmp[8] unless tmp.nil? || result.include?(tmp[8])
           end
         end
         result
-      end
-
-      private
-
-      def youtube_ids0(doc, css, attr)
-        doc.css(css).each do |d|
-          d[attr].scan(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/) do |m|
-            yield m[6]
-          end
-        end
       end
 
     end
