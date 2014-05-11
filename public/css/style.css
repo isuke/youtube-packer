@@ -47,3 +47,7 @@ a {
 .ja {
   font-size: 80%;
 }
+
+.error {
+  color: #FF0000;
+}

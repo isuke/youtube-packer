@@ -15,10 +15,14 @@
       <form action="/main" method="POST">
         <div class="en"><p>Enter URL that you want to make playlist.</p></div>
         <div class="jp"><p>プレイリストにしたい動画が埋め込まれたサイトのURLを入力してください。</p></div>
-        <p><input type="url" size="80" name="url" placeholder="http://..." required autofocus></p>
+        <% if @error_message %>
+          <div class="error">
+            <p><%= @error_message %></p>
+          </div>
+        <% end %>
+        <p><input type="url" size="80" name="url" value="<%= @url %>" placeholder="http://..." required autofocus></p>
         <p><input type="submit" value="Make Playlist!"></p>
       </form>
     </div>
   </body>
 </html>
-
