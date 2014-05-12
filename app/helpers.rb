@@ -1,3 +1,12 @@
+
+class String
+  URL_REG = /https?:\/\/[\w\/:%#\$&\?\(\)~\.=\+\-]+/
+
+  def url?
+    self =~ URL_REG
+  end
+end
+
 module Sinatra
   module YPer
     module Helpers
