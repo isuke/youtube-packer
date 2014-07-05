@@ -10,7 +10,7 @@ describe 'The Youtube Packer' do
     it "show index" do
       get '/'
       expect(last_response).to be_ok
-      expect(last_response.body).to include('Youtube Packer')
+      expect(last_response.body).to include('YouTube Packer')
     end
   end
 
@@ -92,7 +92,7 @@ describe 'The Youtube Packer' do
 
         it 'show index and error message' do
           last_response.should_not be_ok
-          last_response.body.should include('Not found youtube movie from this site.')
+          last_response.body.should include('Not found YouTube movie from this site.')
         end
       end
     end

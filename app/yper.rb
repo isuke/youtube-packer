@@ -39,7 +39,7 @@ class YPer < Sinatra::Base
       @error_message = 'This value is not url.'
       raise
     rescue NotFoundYoutubeMovie
-      @error_message = 'Not found youtube movie from this site.'
+      @error_message = 'Not found YouTube movie from this site.'
       raise
     end
   end

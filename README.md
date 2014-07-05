@@ -1,8 +1,8 @@
-# Youtube Packer
+# YouTube Packer
 
-Youtube Packerはブログ等から埋め込みYoutube動画を抽出し、
+YouTube Packerはブログ等から埋め込みYouTube動画を抽出し、
 一つのプレイリストにまとめるためのアプリケーションです。
-Youtube埋め込み動画が複数あるページで、それらの動画を連続再生したい場合にご利用ください。
+YouTube埋め込み動画が複数あるページで、それらの動画を連続再生したい場合にご利用ください。
 
 ### 使い方
 
