@@ -14,7 +14,7 @@ describe 'The Youtube Packer' do
     end
   end
 
-  context "when post '/main'" do
+  context "when post '/'" do
     context 'if got correct url' do
       context 'if include youtube ids' do
         def get_code(frame_codes, urls)
@@ -51,7 +51,7 @@ describe 'The Youtube Packer' do
               </html>
             EOM
 
-          post '/main', url: 'http://www.example.com'
+          post '/', url: 'http://www.example.com'
         end
 
         it "show main" do
@@ -87,7 +87,7 @@ describe 'The Youtube Packer' do
               </html>
             EOM
 
-          post '/main', url: 'http://www.example.com'
+          post '/', url: 'http://www.example.com'
         end
 
         it 'show index and error message' do
@@ -101,7 +101,7 @@ describe 'The Youtube Packer' do
       before do
         stub_request(:any, 'http://www.incollect.com').to_return(status: 404)
 
-        post '/main', url: 'http://www.incollect.com'
+        post '/', url: 'http://www.incollect.com'
       end
 
       it 'show index and error message' do
@@ -112,7 +112,7 @@ describe 'The Youtube Packer' do
 
     context 'if got not url' do
       it 'show index and error message' do
-        post '/main', url: '/Users/bob/myfile.html'
+        post '/', url: '/Users/bob/myfile.html'
 
         last_response.should_not be_ok
         last_response.body.should include('This value is not url.')

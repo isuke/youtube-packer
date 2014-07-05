@@ -23,7 +23,7 @@ class YPer < Sinatra::Base
     erb :index
   end
 
-  post '/main' do
+  post '/' do
     begin
       @url = params[:url]
       raise NotURLError unless @url.url?
