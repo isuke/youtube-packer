@@ -20,18 +20,20 @@ class YPer < Sinatra::Base
   class NotFoundYoutubeMovie < StandardError; end
 
   get '/' do
+    @youtube_ids = []
     erb :index
   end
 
-  post '/main' do
+  post '/' do
     begin
+      @youtube_ids = []
       @url = params[:url]
       raise NotURLError unless @url.url?
       doc = Nokogiri::HTML(open(@url))
       @title = doc.title
       @youtube_ids = youtube_ids doc
       raise NotFoundYoutubeMovie if @youtube_ids.empty?
-      erb :main
+      erb :index
     rescue OpenURI::HTTPError, SocketError
       @error_message = 'This value is incorrect url.'
       raise
