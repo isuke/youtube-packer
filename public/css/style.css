@@ -7,8 +7,8 @@ body {
 
 h1 {
   font-size: 22pt;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 h2 {
@@ -23,23 +23,6 @@ a {
   color: #1C1C1C;
 }
 
-#header {
-  margin-top: 80px;
-}
-
-#main {
-  margin-top: 80px;
-}
-
-#footer {
-  margin-top: 500px;
-  text-align: center;
-}
-
-#footer p {
-  color: #BDc0BA;
-}
-
 .en {
 
 }
@@ -50,4 +33,35 @@ a {
 
 .error {
   color: #FF0000;
+}
+
+
+/* Header */
+#header {
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+/* Main */
+#main {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+#form {
+
+}
+
+#video {
+  margin-top: 50px;
+}
+
+/* Footer */
+#footer {
+  margin-top: 500px;
+  text-align: center;
+}
+
+#footer p {
+  color: #BDc0BA;
 }
